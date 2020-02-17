@@ -7,14 +7,16 @@
 <article class="posts__container">
     <h1>MyFace Top Posts</h1>
     <button type="button" onclick="window.location.href = '/posts/create'">NEW POST</button>
+    <button type="button" onclick="window.location.href = '/users'">View Users</button>
     @foreach (var post in Model.Posts)
     {
+       
         <div class="post__container">
-            <h2>@post.PostedBy.Username</h2>
+            <h2>@post.PostedBy.DisplayName on @post.PostedAt.ToShortDateString()</h2>
             <img src="@post.ImageUrl" alt="post feature image"/>
             <p>@post.Message</p>
             <h3>@post.PostedAt</h3>
-            <button type="button" onclick="window.location.href='/post/id'">Read More...</button>
+            <button type="button" onclick="window.location.href='/posts/@post.Id'">Read More...</button>
         </div>
     }
 </article>

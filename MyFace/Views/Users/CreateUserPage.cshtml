@@ -1,3 +1,17 @@
 ﻿@{
     Layout = "_Layout";
 }
+<h1>MyFace: Create User</h1>
+<form method="post" action="/users/create">
+    <label for="FirstName">First Name:</label><br>
+    <input name = "FirstName" id = "FirstName"/><br/>
+    <label for="LastName">Last Name:</label><br>
+    <input name = "LastName" id = "LastName"/><br/>
+    <label for="Email">Email Address:</label><br>
+    <input name = "Email" id = "Email"/><br/>
+    <label for="ProfileImageUrl">Profile Image Url:</label><br/>
+    <input type="text" id="ProfileImageUrl" name="ProfileImageUrl"/><br/>
+    <label for="CoverImageUrl">Cover Image Url:</label><br/>
+    <input type="text" id="CoverImageUrl" name="CoverImageUrl"/><br/>
+    <input type="submit" value="Submit">
+</form>

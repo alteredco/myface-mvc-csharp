@@ -1,11 +1,14 @@
-﻿@{
+﻿@using Microsoft.EntityFrameworkCore.Infrastructure
+@using MyFace.Models.Request
+@model MyFace.Models.View.PostsViewModel
+@{
     Layout = "_Layout";
 }
-
+<h1>MyFace: New Post</h1>
 <article class="form__container">
     <form method="post" action="/posts/create">
         <label for="userId">User Id</label><br/>
-        <input type="text" id="userId" name="userId" alt="user id input box" /><br/>
+        <input type="number" id="userId" name="userId" alt="user id input box" /><br/>
         <label for="postText">New Post Text</label><br/>
         <textarea id="postText" name="postText" alt="new post text input"></textarea><br/>
         <label for="imageUrl">Image Link</label><br/>

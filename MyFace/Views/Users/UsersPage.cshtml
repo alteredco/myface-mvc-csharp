@@ -3,3 +3,18 @@
 @{
     Layout = "_Layout";
 }
+
+<article class="users__container">
+    <h1>MyFace Users</h1>
+    <button onclick="window.location.href='users/create'">NEW USER</button>
+    @foreach (var user in Model.Users)
+    {
+        <div class="user__container">
+        <img src="@user.ProfileImageUrl" alt="@user.Username profile image"/>
+        <h2>@user.FirstName @user.LastName</h2>
+        <p>@user.DisplayName</p>
+        <p>@user.Email</p>
+        <button type="button" onclick="window.location.href='users/@user.Id'">View User</button>
+        </div>
+    }
+</article>
