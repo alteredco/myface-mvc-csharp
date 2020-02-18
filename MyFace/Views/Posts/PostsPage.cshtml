@@ -4,11 +4,12 @@
     Layout = "_Layout";
 }
 
-<article class="posts__container">
-    <section class="posts__menu">
+<section class="posts__menu">
         <h1>Top Posts</h1>
-        <button type="button" class="posts__menuBtn" onclick="window.location.href = '/posts/create'">NEW POST</button>
+    <button type="button" class="posts__menuBtn" onclick="window.location.href = '/posts/create'">NEW POST</button>
     </section>
+
+<article class="posts__container">
     @foreach (var post in Model.Posts)
     {
         <div class="post__container">
