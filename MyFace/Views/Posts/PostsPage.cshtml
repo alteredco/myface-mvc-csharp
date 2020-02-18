@@ -5,18 +5,18 @@
 }
 
 <article class="posts__container">
-    <h1>MyFace Top Posts</h1>
-    <button type="button" onclick="window.location.href = '/posts/create'">NEW POST</button>
-    <button type="button" onclick="window.location.href = '/users'">View Users</button>
+    <section class="posts__menu">
+        <h1>Top Posts</h1>
+        <button type="button" class="posts__menuBtn" onclick="window.location.href = '/posts/create'">NEW POST</button>
+    </section>
     @foreach (var post in Model.Posts)
     {
-       
         <div class="post__container">
-            <h2>@post.PostedBy.DisplayName on @post.PostedAt.ToShortDateString()</h2>
-            <img src="@post.ImageUrl" alt="post feature image"/>
-            <p>@post.Message</p>
-            <h3>@post.PostedAt</h3>
-            <button type="button" onclick="window.location.href='/posts/@post.Id'">Read More...</button>
+            <h2>By @post.PostedBy.DisplayName</h2>
+            <img class="--zoomout" src="@post.ImageUrl" alt="post feature image"/>
+            <h3>@post.Message</h3>
+            <p> on @post.PostedAt.ToShortDateString()</p>
+            <button class="post__goBtn" type="button" onclick="window.location.href='/posts/@post.Id'">Read More...</button>
         </div>
     }
 </article>
