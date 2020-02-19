@@ -6,7 +6,7 @@ namespace MyFace.Models.api
 {
     public class UserApiModel
     {
-        private User _user;
+        private readonly User _user;
 
         public UserApiModel(User user)
         {

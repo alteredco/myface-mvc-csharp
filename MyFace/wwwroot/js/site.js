@@ -1,24 +1,26 @@
-// window.addEventListener("load", ()=> {
-//     console.log("Hello TechSwitch!")
-// });
-//
-// const postTitle = document.getElementById("title");
-
-// document.addEventListener("click", (e)=>{
-//     e.target.remove();
-// });
-
-/*create modal*/
 const newPostBtn = document.getElementById("newPost");
+const newUserBtn = document.getElementById("newUser");
 const modal = document.getElementById("modal");
-//
-window.onload = () => {
-    newPostBtn.onclick = null;
-};
+
+/*new post modal*/
 
 newPostBtn.addEventListener("click", (e)=>{
+    e.preventDefault();
     modal.style.display = "block";
-    console.log("modal time!");
+});
+
+window.onclick = (e) => {
+    if(e.target === modal){
+        modal.style.display = "none";
+    }
+};
+
+/*new user modal */
+console.log(newUserBtn.innerHTML);
+
+newUserBtn.addEventListener("click", (e)=>{
+    e.preventDefault();
+    modal.style.display = "block";
 });
 
 /*create delete button */
@@ -32,6 +34,8 @@ document.querySelectorAll(".post__container").forEach(post => {
         post.remove();
     })
 });
+
+
 
 
 

@@ -13,7 +13,7 @@ namespace MyFace.Models.View
         {
             _user = user;
         }
-        
+
         public int Id => _user.Id;
         public string FirstName => _user.FirstName;
         public string LastName => _user.LastName;
@@ -23,7 +23,7 @@ namespace MyFace.Models.View
         public string ProfileImageUrl => _user.ProfileImageUrl;
         public string CoverImageUrl => _user.CoverImageUrl;
     }
-    
+
     public class PostViewModel
     {
         private readonly Post _post;
@@ -39,12 +39,12 @@ namespace MyFace.Models.View
                 .Where(interaction => interaction.Type == InteractionType.DISLIKE)
                 .Select(interaction => new PostUserViewModel(interaction.User));
         }
-        
+
         public int Id => _post.Id;
         public string Message => _post.Message;
         public string ImageUrl => _post.ImageUrl;
         public DateTime PostedAt => _post.PostedAt;
-        
+
         public PostUserViewModel PostedBy { get; }
         public IEnumerable<PostUserViewModel> LikedBy { get; }
         public IEnumerable<PostUserViewModel> DislikedBy { get; }

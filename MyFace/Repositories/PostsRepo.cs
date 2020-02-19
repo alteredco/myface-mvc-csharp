@@ -13,7 +13,7 @@ namespace MyFace.Repositories
         Post GetById(int id);
         void CreatePost(CreatePostRequestModel postModel, User postedBy);
     }
-    
+
     public class PostsRepo : IPostsRepo
     {
         private readonly MyFaceDbContext _context;
@@ -22,7 +22,7 @@ namespace MyFace.Repositories
         {
             _context = context;
         }
-        
+
         public IEnumerable<Post> GetAll()
         {
             return _context.Posts
@@ -45,7 +45,7 @@ namespace MyFace.Repositories
                 ImageUrl = postModel.ImageUrl,
                 Message = postModel.Message,
                 PostedAt = DateTime.Now,
-                User = postedBy,
+                User = postedBy
             });
             _context.SaveChanges();
         }

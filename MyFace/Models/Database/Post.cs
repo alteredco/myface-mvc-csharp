@@ -10,6 +10,7 @@ namespace MyFace.Models.Database
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
+
         public string Message { get; set; }
         public string ImageUrl { get; set; }
         public DateTime PostedAt { get; set; }

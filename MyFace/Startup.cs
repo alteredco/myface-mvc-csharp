@@ -5,23 +5,21 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Logging.Console;
-using Microsoft.Extensions.Options;
 using MyFace.Repositories;
 
 namespace MyFace
 {
     public class Startup
     {
+        public static readonly ILoggerFactory
+            loggerFactory = LoggerFactory.Create(builder => { builder.AddConsole(); });
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
 
         public IConfiguration Configuration { get; }
-
-        public static readonly ILoggerFactory
-            loggerFactory = LoggerFactory.Create(builder => { builder.AddConsole(); });
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -33,7 +31,7 @@ namespace MyFace
             });
 
             services.AddControllersWithViews();
-            
+
             services.AddTransient<IPostsRepo, PostsRepo>();
             services.AddTransient<IUsersRepo, UsersRepo>();
             services.AddTransient<IInteractionsRepo, InteractionsRepo>();

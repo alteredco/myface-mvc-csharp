@@ -1,8 +1,5 @@
-﻿using System.Collections.Generic;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using MyFace.Models.api;
-using MyFace.Models.Database;
-using MyFace.Models.View;
 using MyFace.Repositories;
 
 namespace MyFace.Controllers
@@ -11,7 +8,7 @@ namespace MyFace.Controllers
     [Route("api/users")]
     public class UsersApiController : ControllerBase
     {
-        private IUsersRepo _users;
+        private readonly IUsersRepo _users;
 
         public UsersApiController(IUsersRepo users)
         {

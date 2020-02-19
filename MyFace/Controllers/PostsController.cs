@@ -8,9 +8,9 @@ namespace MyFace.Controllers
     [Route("/posts")]
     public class PostsController : Controller
     {
+        private readonly IInteractionsRepo _interactions;
         private readonly IPostsRepo _posts;
         private readonly IUsersRepo _users;
-        private readonly IInteractionsRepo _interactions;
 
         public PostsController(IPostsRepo posts, IUsersRepo users, IInteractionsRepo interactions)
         {
@@ -18,7 +18,7 @@ namespace MyFace.Controllers
             _users = users;
             _interactions = interactions;
         }
-        
+
         [HttpGet("")]
         public IActionResult PostsPage()
         {
@@ -50,6 +50,5 @@ namespace MyFace.Controllers
 
             return RedirectToAction("PostsPage");
         }
-        
     }
 }

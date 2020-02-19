@@ -28,7 +28,7 @@ namespace MyFace.Models.View
         public string Email => _user.Email;
         public string ProfileImageUrl => _user.ProfileImageUrl;
         public string CoverImageUrl => _user.CoverImageUrl;
-        
+
         public IEnumerable<PostViewModel> Posts { get; }
         public IEnumerable<PostViewModel> Likes { get; }
         public IEnumerable<PostViewModel> Dislikes { get; }

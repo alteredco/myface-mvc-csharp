@@ -3,20 +3,39 @@
 @{
     Layout = "_Layout";
 }
+<div class="modal" id="modal">
+    <div class="modal__content">
+        <h1>MyFace: Create User</h1>
+        <form method="post" action="/users/create">
+            <label for="FirstName">First Name:</label><br>
+            <input name="FirstName" id="FirstName"/><br/>
+            <label for="LastName">Last Name:</label><br>
+            <input name="LastName" id="LastName"/><br/>
+            <label for="Email">Email Address:</label><br>
+            <input name="Email" id="Email"/><br/>
+            <label for="ProfileImageUrl">Profile Image Url:</label><br/>
+            <input type="text" id="ProfileImageUrl" name="ProfileImageUrl"/><br/>
+            <label for="CoverImageUrl">Cover Image Url:</label><br/>
+            <input type="text" id="CoverImageUrl" name="CoverImageUrl"/><br/>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</div>
+
 <section class="users__menu">
     <h1 class="title">MyFace Users</h1>
-    <button class="menuBtn --growButton" onclick="window.location.href='users/create'">NEW USER</button>
+    <a id="newUser" href="users/create"><button class="menuBtn --growButton">NEW USER</button></a>
 </section>
 
 <article class="users__container">
     @foreach (var user in Model.Users)
     {
         <div class="user__container">
-        <img src="@user.ProfileImageUrl" alt="@user.Username profile image"/>
-        <h2>@user.FirstName @user.LastName</h2>
-        <p>@user.DisplayName</p>
-        <p>@user.Email</p>
-        <button class="user__goBtn" type="button" onclick="window.location.href='users/@user.Id'">View User</button>
+            <img src="@user.ProfileImageUrl" alt="@user.Username profile image"/>
+            <h2>@user.FirstName @user.LastName</h2>
+            <p>@user.DisplayName</p>
+            <p>@user.Email</p>
+            <button class="user__goBtn" type="button" onclick="window.location.href='users/@user.Id'">View User</button>
         </div>
     }
 </article>

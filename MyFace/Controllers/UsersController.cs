@@ -14,7 +14,7 @@ namespace MyFace.Controllers
         {
             _users = users;
         }
-        
+
         [HttpGet("")]
         public IActionResult UsersPage()
         {

@@ -6,11 +6,11 @@ namespace MyFace.Models.View
 {
     public class UsersViewModel
     {
-        public IEnumerable<UserViewModel> Users { get; }
-
         public UsersViewModel(IEnumerable<User> users)
         {
             Users = users.Select(user => new UserViewModel(user));
         }
+
+        public IEnumerable<UserViewModel> Users { get; }
     }
 }

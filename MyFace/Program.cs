@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
@@ -16,7 +15,7 @@ namespace MyFace
             var host = CreateHostBuilder(args).Build();
 
             CreateDbIfNotExists(host);
-            
+
             host.Run();
         }
 
@@ -46,10 +45,7 @@ namespace MyFace
 
         private static List<Interaction> GetSampleInteractions()
         {
-            return new List<Interaction>
-            {
-                
-            };
+            return new List<Interaction>();
         }
 
         private static List<Post> GetSamplePosts()
@@ -166,8 +162,8 @@ namespace MyFace
                     Message = "Adaptive bandwidth-monitored throughput",
                     ImageUrl = "https://i.picsum.photos/id/315/1280/960.jpg",
                     UserId = 4,
-                    PostedAt = DateTime.Now,
-                },
+                    PostedAt = DateTime.Now
+                }
             };
         }
 
@@ -182,7 +178,7 @@ namespace MyFace
                     Username = "gfundell0",
                     Email = "gfundell0@drupal.org",
                     ProfileImageUrl = "https://i.picsum.photos/id/100/480/640.jpg",
-                    CoverImageUrl = "https://i.picsum.photos/id/200/1280/480.jpg",
+                    CoverImageUrl = "https://i.picsum.photos/id/200/1280/480.jpg"
                 },
                 new User
                 {
@@ -191,7 +187,7 @@ namespace MyFace
                     Username = "mshuttle1",
                     Email = "mshuttle1@about.me",
                     ProfileImageUrl = "https://i.picsum.photos/id/101/480/640.jpg",
-                    CoverImageUrl = "https://i.picsum.photos/id/201/1280/480.jpg",
+                    CoverImageUrl = "https://i.picsum.photos/id/201/1280/480.jpg"
                 },
                 new User
                 {
@@ -200,7 +196,7 @@ namespace MyFace
                     Username = "mvereker2",
                     Email = "mvereker2@t.co",
                     ProfileImageUrl = "https://i.picsum.photos/id/102/480/640.jpg",
-                    CoverImageUrl = "https://i.picsum.photos/id/202/1280/480.jpg",
+                    CoverImageUrl = "https://i.picsum.photos/id/202/1280/480.jpg"
                 },
                 new User
                 {
@@ -209,7 +205,7 @@ namespace MyFace
                     Username = "hwinsley3",
                     Email = "hwinsley3@mashable.com",
                     ProfileImageUrl = "https://i.picsum.photos/id/103/480/640.jpg",
-                    CoverImageUrl = "https://i.picsum.photos/id/203/1280/480.jpg",
+                    CoverImageUrl = "https://i.picsum.photos/id/203/1280/480.jpg"
                 },
                 new User
                 {
@@ -218,13 +214,15 @@ namespace MyFace
                     Username = "acruttenden4",
                     Email = "acruttenden4@ucoz.ru",
                     ProfileImageUrl = "https://i.picsum.photos/id/104/480/640.jpg",
-                    CoverImageUrl = "https://i.picsum.photos/id/204/1280/480.jpg",
-                },
+                    CoverImageUrl = "https://i.picsum.photos/id/204/1280/480.jpg"
+                }
             };
         }
 
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
+        public static IHostBuilder CreateHostBuilder(string[] args)
+        {
+            return Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder => { webBuilder.UseStartup<Startup>(); });
+        }
     }
 }

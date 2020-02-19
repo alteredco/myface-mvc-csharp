@@ -12,7 +12,7 @@ namespace MyFace.Repositories
         User GetById(int id);
         void Create(CreateUserRequestModel newUser);
     }
-    
+
     public class UsersRepo : IUsersRepo
     {
         private readonly MyFaceDbContext _context;
@@ -21,7 +21,7 @@ namespace MyFace.Repositories
         {
             _context = context;
         }
-        
+
         public IEnumerable<User> GetAll()
         {
             return _context.Users
@@ -45,7 +45,7 @@ namespace MyFace.Repositories
                 Email = newUser.Email,
                 Username = newUser.Username,
                 ProfileImageUrl = newUser.ProfileImageUrl,
-                CoverImageUrl = newUser.CoverImageUrl,
+                CoverImageUrl = newUser.CoverImageUrl
             });
             _context.SaveChanges();
         }
