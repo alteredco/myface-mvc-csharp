@@ -16,12 +16,11 @@ window.onclick = (e) => {
 };
 
 /*new user modal */
-console.log(newUserBtn.innerHTML);
-
-newUserBtn.addEventListener("click", (e)=>{
-    e.preventDefault();
-    modal.style.display = "block";
-});
+//
+// newUserBtn.addEventListener("click", (e)=>{
+//     e.preventDefault();
+//     modal.style.display = "block";
+// });
 
 /*create delete button */
 document.querySelectorAll(".post__container").forEach(post => {
@@ -34,13 +33,3 @@ document.querySelectorAll(".post__container").forEach(post => {
         post.remove();
     })
 });
-
-
-
-
-
-
-
-
-
-
