@@ -3,10 +3,12 @@
 @{
     Layout = "_Layout";
 }
+<section class="users__menu">
+    <h1 class="title">MyFace Users</h1>
+    <button class="menuBtn --growButton" onclick="window.location.href='users/create'">NEW USER</button>
+</section>
 
 <article class="users__container">
-    <h1>MyFace Users</h1>
-    <button onclick="window.location.href='users/create'">NEW USER</button>
     @foreach (var user in Model.Users)
     {
         <div class="user__container">
@@ -14,7 +16,7 @@
         <h2>@user.FirstName @user.LastName</h2>
         <p>@user.DisplayName</p>
         <p>@user.Email</p>
-        <button type="button" onclick="window.location.href='users/@user.Id'">View User</button>
+        <button class="user__goBtn" type="button" onclick="window.location.href='users/@user.Id'">View User</button>
         </div>
     }
 </article>

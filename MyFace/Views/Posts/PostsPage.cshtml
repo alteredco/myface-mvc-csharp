@@ -5,8 +5,8 @@
 }
 
 <section class="posts__menu">
-        <h1>Top Posts</h1>
-    <button type="button" class="posts__menuBtn" onclick="window.location.href = '/posts/create'">NEW POST</button>
+        <h1 id="title">Top Posts</h1>
+    <button type="button" class="menuBtn --growButton" onclick="window.location.href = '/posts/create'">NEW POST</button>
     </section>
 
 <article class="posts__container">
@@ -17,7 +17,7 @@
             <img class="--zoomout" src="@post.ImageUrl" alt="post feature image"/>
             <h3>@post.Message</h3>
             <p> on @post.PostedAt.ToShortDateString()</p>
-            <button class="post__goBtn" type="button" onclick="window.location.href='/posts/@post.Id'">Read More...</button>
+            <button class="post__goBtn --growText" type="button" onclick="window.location.href='/posts/@post.Id'">Read More...</button>
         </div>
     }
 </article>
