@@ -107,7 +107,26 @@ footer {
 }
 
 /*Modal*/
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+}
 
+.modal__content {
+    background-color: var(--main-white);
+    border-radius: .5rem;
+    margin: 15vh auto;
+    padding: 2rem;
+    width: 80vw;
+    box-shadow: 2px 6px 3px rgba(15, 226, 239, 0.55);
+}
 
 /*Posts Page*/
 

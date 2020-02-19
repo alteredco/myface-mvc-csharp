@@ -4,20 +4,27 @@
     Layout = "_Layout";
 }
 
+<div class="modal" id="modal">
+    <div class="modal__content">
+        <p>Hello modal my old friend...</p>
+    </div>
+</div>
+
 <section class="posts__menu">
         <h1 id="title">Top Posts</h1>
-    <button type="button" class="menuBtn --growButton" onclick="window.location.href = '/posts/create'">NEW POST</button>
+    <button id="newPost" type="button" class="menuBtn --growButton" onclick="window.location.href = '/posts/create'">NEW POST</button>
     </section>
 
 <article class="posts__container">
     @foreach (var post in Model.Posts)
     {
-        <div class="post__container">
+        <div id="@post.Id" class="post__container">
             <h2>By @post.PostedBy.DisplayName</h2>
             <img class="--zoomout" src="@post.ImageUrl" alt="post feature image"/>
             <h3>@post.Message</h3>
             <p> on @post.PostedAt.ToShortDateString()</p>
             <button class="post__goBtn --growText" type="button" onclick="window.location.href='/posts/@post.Id'">Read More...</button>
+            <button class="post__goBtn --growText" type="button" onclick="window.location.href='/posts/@post.Id'">Delete</button>
         </div>
     }
 </article>
