@@ -11,6 +11,7 @@
     --main-green: #28C6A9;
     --main-white: #FAF9F7;
     --light-grey: #A8C0D3;
+    --delete : #ff858e;
 }
 
 a {
@@ -141,6 +142,7 @@ footer {
 .posts__container{
     max-width: 100vw;
     text-align: center;
+    padding-bottom: 5rem;
 }
 
 .posts__menu h1 {
@@ -171,6 +173,21 @@ footer {
 
 .post__goBtn:hover {
     background-color: var(--main-blue);
+}
+
+.post__deleteBtn {
+    border: none;
+    border-radius: .75rem;
+    padding: 1rem;
+    color: var(--main-white);
+    font-weight: bold;
+    background-color: var(--delete);
+    margin-right: 2rem;
+    box-shadow: .2rem .2rem .9rem var(--light-grey);
+}
+
+.post__deleteBtn:hover {
+    background-color: var(--main-green);
 }
 
 .post__container img {

@@ -6,7 +6,18 @@
 
 <div class="modal" id="modal">
     <div class="modal__content">
-        <p>Hello modal my old friend...</p>
+        <h1>MyFace: New Post</h1>
+        <article class="form__container">
+            <form method="post" action="/posts/create">
+                <label for="userId">User Id</label><br/>
+                <input type="number" id="userId" name="userId" alt="user id input box" /><br/>
+                <label for="postText">New Post Text</label><br/>
+                <textarea id="postText" name="postText" alt="new post text input"></textarea><br/>
+                <label for="imageUrl">Image Link</label><br/>
+                <input type="text" id="imageUrl" name="imageUrl" alt="new post image url link input" /><br/>
+                <input type="submit" value="SUBMIT"/>
+            </form>
+        </article>
     </div>
 </div>
 
@@ -15,7 +26,7 @@
     <button id="newPost" type="button" class="menuBtn --growButton" onclick="window.location.href = '/posts/create'">NEW POST</button>
     </section>
 
-<article class="posts__container">
+<article id="posts" class="posts__container">
     @foreach (var post in Model.Posts)
     {
         <div id="@post.Id" class="post__container">
@@ -24,7 +35,6 @@
             <h3>@post.Message</h3>
             <p> on @post.PostedAt.ToShortDateString()</p>
             <button class="post__goBtn --growText" type="button" onclick="window.location.href='/posts/@post.Id'">Read More...</button>
-            <button class="post__goBtn --growText" type="button" onclick="window.location.href='/posts/@post.Id'">Delete</button>
         </div>
     }
 </article>
