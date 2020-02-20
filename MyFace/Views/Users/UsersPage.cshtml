@@ -24,7 +24,7 @@
 
 <section class="users__menu">
     <h1 class="title">MyFace Users</h1>
-    <a id="newUser" href="users/create"><button class="menuBtn --growButton">NEW USER</button></a>
+    <a id="newUser" class="menuBtn --growButton" href="users/create">NEW USER</a>
 </section>
 
 <article class="users__container">
@@ -35,7 +35,7 @@
             <h2>@user.FirstName @user.LastName</h2>
             <p>@user.DisplayName</p>
             <p>@user.Email</p>
-            <button class="user__goBtn" type="button" onclick="window.location.href='users/@user.Id'">View User</button>
+            <button class="user__goBtn --growText" type="button" onclick="window.location.href='users/@user.Id'">View User</button>
         </div>
     }
 </article>

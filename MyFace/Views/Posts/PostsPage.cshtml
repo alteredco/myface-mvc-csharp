@@ -30,8 +30,8 @@
     @foreach (var post in Model.Posts)
     {
         <div id="@post.Id" class="post__container">
-            <h2>By @post.PostedBy.DisplayName</h2>
-            <img class="--zoomout" src="@post.ImageUrl" alt="post feature image"/>
+            <h2><a href="users/@post.Id">By @post.PostedBy.DisplayName</a></h2>
+            <img src="@post.ImageUrl" alt="post feature image"/>
             <h3>@post.Message</h3>
             <p> on @post.PostedAt.ToShortDateString()</p>
             <button class="post__goBtn --growText" type="button" onclick="window.location.href='/posts/@post.Id'">Read More...</button>

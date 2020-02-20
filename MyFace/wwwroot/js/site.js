@@ -15,14 +15,6 @@ window.onclick = (e) => {
     }
 };
 
-/*new user modal */
-//
-// newUserBtn.addEventListener("click", (e)=>{
-//     e.preventDefault();
-//     modal.style.display = "block";
-// });
-
-/*create delete button */
 document.querySelectorAll(".post__container").forEach(post => {
     const button = document.createElement("button");
     button.className = "post__deleteBtn";
@@ -33,3 +25,11 @@ document.querySelectorAll(".post__container").forEach(post => {
         post.remove();
     })
 });
+
+/*new user modal */
+//
+// newUserBtn.addEventListener("click", (e)=>{
+//     e.preventDefault();
+//     modal.style.display = "block";
+// });
+

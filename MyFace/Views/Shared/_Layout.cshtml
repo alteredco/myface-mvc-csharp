@@ -10,6 +10,8 @@
 <body>
 <header>
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <div id="hamburger">
+            <img src="~/dehaze-24px.svg" />
         <div class="container">
             <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">MyFace</a>
             <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
@@ -26,6 +28,7 @@
                 </ul>
             </div>
         </div>
+        </div>
     </nav>
 </header>
 <div class="container">
@@ -36,7 +39,7 @@
 
 <footer class="border-top footer text-muted">
     <div class="container">
-        &copy; 2020 - MyFace - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        &copy; 2020 - <a href="/posts">MyFace</a> - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
     </div>
 </footer>
 <script src="~/js/site.js" asp-append-version="true"></script>
