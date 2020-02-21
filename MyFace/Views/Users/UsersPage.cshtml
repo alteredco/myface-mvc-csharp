@@ -35,7 +35,7 @@
             <h2>@user.FirstName @user.LastName</h2>
             <p>@user.DisplayName</p>
             <p>@user.Email</p>
-            <button class="user__goBtn --growText" type="button" onclick="window.location.href='users/@user.Id'">View User</button>
+            <a href="users/@user.Id"><button class="user__goBtn --growText" type="button" onclick="window.location.href='users/@user.Id'">View User</button></a>
         </div>
     }
 </article>

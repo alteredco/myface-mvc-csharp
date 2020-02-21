@@ -10,11 +10,13 @@
 <body>
 <header>
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-        <div id="hamburger">
-            <img src="~/dehaze-24px.svg" />
-        <div class="container">
+        <div id="toggle" class="container" aria-label="Close main menu">
+            @* <input type="checkbox"/> *@
+            @* <span aria-hidden="true"></span> *@
+            @* <span aria-hidden="true"></span> *@
+            @* <span aria-hidden="true"></span> *@
             <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">MyFace</a>
-            <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+            <div class="navbar-collapse collapse">
                 <ul class="navbar-nav flex-grow-1">
                     <li class="nav-item">
                         <a class="nav-link text-dark --growText" asp-area="" asp-controller="Posts" asp-action="PostsPage">Posts</a>
@@ -27,7 +29,6 @@
                     </li>
                 </ul>
             </div>
-        </div>
         </div>
     </nav>
 </header>
